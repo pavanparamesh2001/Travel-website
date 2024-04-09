@@ -1,0 +1,354 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+.header img{
+    width: 170px;
+    float: left;
+}
+.heading h1{
+    text-align: center;
+    color: white;
+    padding-top: 200px;
+    padding-bottom: 0;
+    font-size: 55px;
+    font-family: cursive;
+}
+.changecontent::after{
+    content: '';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext{
+    0%{content: "Bali";}
+    10%{content: "Singapore";}
+    20%{content: "Tokyo";}
+    30%{content: "Maldives";}
+    
+}
+.heading h2{
+    text-align: center;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 0;
+    font-family: cursive;
+
+}
+
+
+
+button{
+    width: 100px;
+    padding: 8px 0;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    float: right;
+    color: white;
+    background: transparent;
+    
+    
+}
+
+.nav-item{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+.text-white h2{
+    font-family: cursive;
+    font-weight: 400;
+}
+.text-white h3{
+    font-family: cursive;
+    
+
+}
+.input-group{
+    width: 100%;
+   
+    max-width: 500px;
+    border-radius: 30px;
+    background: white;
+    margin: auto;
+    padding: 2px;
+    margin-top: 50px;
+}
+.form-control{
+    border: 0;
+    border-radius: 30px;
+    margin: 2px;
+    box-shadow: none;
+    
+}
+.input-group-text{
+    width: 100px;
+    background-image: linear-gradient(#00ff7e,#1f3d90);
+    border: 0;
+    color: white;
+   
+    border-radius: 30px;
+    box-shadow: none;
+}
+.features{
+    padding: 100px 0;
+
+}
+h2{
+    text-align: center;
+    padding-bottom: 70px;
+    
+}
+.btn btn-success{
+    padding-bottom: 30px;
+}
+.rating{
+    padding: 3px;
+    float: right;
+    background-color: white;
+    bottom: -2px;
+    
+    position: absolute;
+}
+.card-text{
+    font-family: fantasy;
+}
+.card{
+    transition: all 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.15);
+}
+.main-text span{
+    color:#ffa500;
+    
+}
+
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #ffa500;
+    align-items: center;
+    justify-content: center;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: white;
+}
+.services-list div p{
+    font-size: 18px;
+    color: white;
+}
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+.gallery{
+    padding: 100px 0;
+    background: #efefef;
+}
+.gallery-box img{
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.gallery-box img:hover{
+    transform: scale(1.1);
+}
+.gallery-box h4{
+   display: block;
+    color: white;
+    font-size: 20px;
+    text-shadow:-2px 2px 2px #000 ;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.gallery-box{
+    position: relative;
+    margin-bottom: 30px;
+}
+.banner{
+    height: 80%;
+    background-image: url("https://w0.peakpx.com/wallpaper/371/1012/HD-wallpaper-maldives-at-night-resort-maldives-beautiful-lights.jpg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 15%;
+}
+.banner-highlights{
+    padding: 70px 0;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    color: white;
+}
+.booking-btn{
+    width: 120px;
+    padding: 8px 0;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    
+    color: white;
+    background: transparent;
+    margin-top: 20px;
+    
+}
+.users-feedback{
+    padding: 100px 0;
+}
+.user-review{
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0,0,100,0.2);
+    padding-bottom: 50px;
+}
+.user-review p{
+    padding: 50px 10px 10px 10px;
+}
+.users-feedback img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0px 100% 20px 40%;
+    
+}
+.logo2 img{
+    width: 170px;
+    float: left;
+}
+.text-reset{
+    text-decoration: none;
+}
+@media only screen and (max-width: 400px) {
+    .header img {
+        width: 120px; /* Adjust width of the image */
+    }
+    .heading h1 {
+        padding-top: 100px; /* Adjust padding */
+        font-size: 40px; /* Adjust font size */
+    }
+    .heading h2 {
+        padding-top: 50px; /* Adjust padding */
+    }
+    .input-group {
+        margin-top: 30px; /* Adjust margin */
+    }
+    .services-list div {
+        padding: 20px; /* Adjust padding */
+        font-size: 12px; /* Adjust font size */
+    }
+    .services-list div i {
+        font-size: 40px; /* Adjust font size */
+        margin-bottom: 20px; /* Adjust margin */
+    }
+    .services-list div h2 {
+        font-size: 24px; /* Adjust font size */
+        margin-bottom: 5px; /* Adjust margin */
+    }
+    .services-list div p {
+        font-size: 16px; /* Adjust font size */
+    }
+    .gallery-box h4 {
+        font-size: 16px; /* Adjust font size */
+    }
+    .banner-highlights {
+        padding: 40px 0; /* Adjust padding */
+    }
+    .booking-btn {
+        width: 100px; /* Adjust width */
+    }
+    .users-feedback img {
+        width: 40px; /* Adjust width */
+        height: 40px; /* Adjust height */
+        margin: 0px 90% 10px 35%; /* Adjust margin */
+    }
+    .navbar-toggler {
+        display: block; /* Show the navbar toggler button */
+      }
+    
+      .collapse {
+        display: none; /* Hide the collapsed navbar */
+      }
+    
+      .navbar-nav {
+        flex-direction: column; /* Stack the nav items vertically */
+        padding-left: 0; 
+      }
+      .nav-link {
+        padding: .5rem 1rem;
+        text-align: center;
+      }
+      
+
+    
+      .nav-item {
+        margin-bottom: 10px; /* Add spacing between nav items */
+        width: 100%;
+      }
+      .col-3 {
+        flex: 0 0 100%; /* Set column width to 100% */
+        max-width: 100%; /* Set maximum width to 100% */
+        margin-bottom: 20px; /* Add spacing between columns */
+      }
+      
+      /* Adjust card width to fit smaller screens */
+      .card {
+        width: 100%; /* Set card width to 100% */
+      }
+    
+      /* Adjust modal styles for smaller screens */
+      .modal-dialog {
+        max-width: 90%; /* Set maximum width of modal dialog */
+      }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+

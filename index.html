@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+
+   
+   
+
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <img src="data:image/png;base64,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">
+            
+
+
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg bg-body">
+       
+        
+        <div class="container-fluid">
+          <button
+            data-mdb-collapse-init
+            class="navbar-toggler"
+            type="button"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Packages</a>
+              </li>
+              
+            </ul>
+          </div>
+         
+        </div>
+      </nav>
+      <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://e1.pxfuel.com/desktop-wallpaper/842/841/desktop-wallpaper-world-beautiful-places-tourist-places.jpg');
+      height: 600px ;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    "
+  >
+    
+      <div class="heading">
+          <h2>Travel Across The Globe</h2>
+          <h1>Visit<span class="changecontent"></span></h1>
+      </div>
+          
+         <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Country or City">
+          <div class="input-group-append">
+            <button type="submit" class="input-group-text btn">Search</button>
+          </div>
+         </div>
+           
+          
+          
+        </div>
+      </div>
+      <section class="features">
+        <h1>Featured Destinations</h1>
+        <div class="row my-5">
+          <div class="col-3">
+  
+         
+        <div class="card" style="width: 18rem;">
+          <img src="https://globalgrasshopper.com/wp-content/uploads/2014/01/Most-beautiful-places-to-visit-in-Bali.jpg" height="250px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Bali</h5>
+            <p class="card-text"> price; &#36;60</p>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+
+            </div>
+            <!-- button -->
+            <div class="text-center">
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+       <!-- modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5" id="staticBackdropLabel">Payment Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" class="form-control" placeholder="Enter name">
+            <input type="number" class="form-control" placeholder="Enter phone number">
+            <input type="text" class="form-control" placeholder="Enter Home Address">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            <button type="button" class="btn btn-primary">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-3">
+
+       
+        <div class="card" style="width: 18rem;">
+          <img src="https://travel-dmc.com/wp-content/uploads/2018/08/best-things-to-do-singapore.jpg.jpg" height="250px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Singapore</h5>
+            <p class="card-text"> price; &#36;78</p>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button> 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+          <div class="col-3">
+  
+         
+        <div class="card" style="width: 18rem;">
+          <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/07/cover-for-Tokyo-In-October.jpg" height="250px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Tokyo</h5>
+            <p class="card-text"> price; &#36;80</p>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+
+            </div>
+            
+            <div class="text-center">
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button> 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+  
+         
+          <div class="card" style="width: 18rem;">
+            <img src="https://assets-news.housing.com/news/wp-content/uploads/2022/07/21152615/MALDIVES-FEATURE-compressed.jpg" height="250px" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Maldives</h5>
+              <p class="card-text"> price; &#36;100</p>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+             
+                <i class="fa-solid fa-star-half-stroke"></i>
+                
+              </div>
+              <div class="text-center">
+                  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button> 
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="Services" id="Services">
+
+      <div class="container">
+        <div class="main-text"><center>
+          <h1><span>S</span>ervices</h1></center>
+
+        </div>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-hotel"></i>
+            <h2>Affordable Hotel</h2>
+            <p>Provide lodging at cheaper price</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-utensils"></i>
+              <h2>Food and Drinks</h2>
+              <p>serves guests food and beverages smoothly and efficiently</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-bullhorn"></i>
+                <h2>Safety Guide</h2>
+                <p>Ensures safety and security of guests</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-globe"></i>
+                  <h2>Across The World</h2>
+                  <p>Locate across the world</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-plane"></i>
+                    <h2>Fastest Travel</h2>
+                    <p>Ensures safe and fastest travel</p>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-person-hiking"></i>
+                      <h2>Adventures</h2>
+                      <p>Provide a great deal of adventure experience</p>
+                      </div>
+                      
+                
+
+        </div>
+      </div>
+      
+
+      </section>
+      <section class="gallery"><center>
+        <h1>Travelling Gallery</h1></center>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="gallery-box">
+              <img src="https://static.toiimg.com/photo/msid-90374589,width-96,height-65.cms">
+              <h4>Bali</h4>
+              </div>
+
+
+            </div>
+            <div class="col-md-3">
+              <div class="gallery-box">
+              <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2luZ2Fwb3JlfGVufDB8fDB8fHww">
+              <h4>Singapore</h4>
+              </div>
+              
+
+            </div>
+            <div class="col-md-3">
+              <div class="gallery-box">
+              <img src="https://travel.usnews.com/dims4/USNEWS/5c38dfb/2147483647/resize/600x400%5E%3E/crop/600x400/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_xpOtCyd.jpg">
+              <h4>Maldives</h4>
+              </div>
+              
+
+            </div>
+            <div class="col-md-3">
+              <div class="gallery-box">
+              <img src="https://www.pandotrip.com/wp-content/uploads/2019/05/Iconic-Tokyo-Tower-at-night.jpg">
+              <h4>Tokyo</h4>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="banner">
+       
+        <div class="banner-highlights">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <h2>Get 30% on top destinations</h2>
+                <p>Book your tickets before 31st december and avail 30% flat discount.</p>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="booking-btn">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="users-feedback"><center>
+        <h1>Users Review</h1></center>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="user-review">
+                <p>Easy process! Cheap rates and good support.
+                  Our cars were waiting at the airport and picked us up all on time. No issues at all.
+                  2nd time using Expedia and both times went off without a hitch
+                  Would 100% recommend.</p>
+                  <h5>Prasobh Sharma</h5>
+                  <small>Bali</small>
+                </div>
+                  <img src="./user1.jpg">
+              </div>
+            
+            <div class="col-md-4">
+              <div class="user-review">
+                <p>The package we chose and upgraded was worth the extra dollars. Usually not keen flying Jetstar, but this time the flights were flawless, flight times were good and checked baggage was included. </p>
+                  <h5>Abhishek Dutt</h5>
+                  <small>Tokyo</small>
+                </div>
+                  <img src="./user2.jpg">
+              
+            </div>
+
+            
+            <div class="col-md-4">
+              <div class="user-review">
+                <p>Would definitely recommend TravelOnline to anyone, including families, couples, singles, etc.
+                  We've used TravelOnline many times previously and have always had a wonderful all round value for money holiday experience. </p>
+                  <h5>Sanvika</h5>
+                  <small>Malaysia</small>
+                </div>
+                  <img src="./user3.jpg">
+              
+            </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <div class="logo2">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATEAAAClCAMAAAADOzq7AAABJlBMVEX///8ILlP///3+/v8ILlIGMFL///wAKFAILlVSZnp1hZL9//8AIk0HL1IAIEsAHkyXpa0AFkYAGkcAIEd4hpYAGEaVoKmptL4AD0GSoK27xsz/xADIztMAKlAAJ01ZbH6ep7Pg5+kAAECyvcEAJljv8/X/wQAAADoAJ0oAEUUAADwAFkEAKlUAKkgAIVcAAC0AADXmuisAGE02TWaHlqQAET0AAEMgOlhFWXEsQEVIV1D80S2+oTiZiDv/zQPWrTQWMUDW3+J8iJvIrTY2RELvxCdRWj1bXzp1b0GxmTceN0MsQGLduizK0r06UW71wwx+cjdYW0idkC/z7dUkQlgDMk0pNzNiXkigizdGU0KKgD9waEaylC9kcn/TvXfRxpQAACA7TVI3x9GOAAANSklEQVR4nO2bCXvbxpnHB8AMOORgQPESIRKgBJEQRQpSZB6hnEZxubaSONGadmt3c1R7fP8vse87AA9Zcrd+rBXV9v09iWnjGAJ/vOcMyBhBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEMQ/AjbAmIqBBP7pKsdh9rYv6okTN0uzRiUIgop/MQkV6OWSZJ/CZap7EVQ8y7IkEnVOaqWY2c62L+zp0pw1ImkJS4hMNC2EF+yDZq677Ut7cjgQvuKLEy5BqsJzL5VSWNwydKa7ynWVssk5N3Fs1jwpCG1ZPP3mD9+eplIIaeVUx7FtK6W2fZFPCRBsMtRao1nxs8vvXvyxJ62VYlbndM5sUmwTl/3bobS48UMu/Jft61c9vtQLlOPVOaNQtsQG82GTgVyalJanf3zWvvr+TFupyDXj3IttiGVUaCDgbnYrsPjaCdPeD4v24seyFCsZeTpDuUgwRDl2cqz1UhyUiY8u2+32ZVnrlWdKv4QdwbYv9mlgs/0CxPx13ALxyi9AsteNdGViltUPoS4jyQDFwiEG95ViXHIZ/XTVXrRfHqc6FZwLKGV5+rNaGhmY5cejPLCULiTmJFbMJGjniTUdil0UrI+REMqO2kfXP/WgLpNp2jurfvP9v+PBGXFp/xalB74oVzXffLXLMsWeXF0zH6ztK7cyLqzyZfto0b765owXeqOf3r68arevXIWmBAYWT32v00kLCPyZjursAe0ALHl+2kjPdhk0G0krfLiRH4hSQfOPTUyn1ugZSHa0+GH07k/XC4hqR+3Fn41iUJjVPWg+s3Yduk+pgwe9K6h29spalHfg4YSD0eB98pCjfyGu67Ca1LfUAgtLIZR5l+3F0dFRG4wL5AK9Xv46MV4JJlAsaFA10zmKeDR7UL9BxWoCFXPVLIU0dMPsJ5OmXZfNK7c9Euox+UHo3ugviwUa2QKsq3318u3zs944i2OoGBwphNCIFJ3ug94PqJMrZsd9uCB5/JCjfykuOyjLzTgmLQ2BfvT87bdXaGHw/+L6l//onHmW5kFilMkUKx8sx4DI/NAtVK4YS04459H4gUf/EhyX3XjylpEVeqfvfsHIdWQUa1//pdyzwAlTmVbm5qSVYnaGUs7DZrOVV9pst+955+ETajbAAd5EeRWG9pWedd69vjJqtdvolEftX85S2Kc511a1m51kFKserPLj/6GYyoW9vTGbcMM/PpYDRtvzTeSHva2b0nx9iK2yR6Ts/PIfO745tsMiVAyiOJRdPf/X189MmMfI9dsrE/nfLQt/S/g72XUuFfu7v4Zlst3amAkIG+1bLp1pu+tz45VG1nWnYduuA2q5rms7W6rSQLETifYl0rPRq8tniywtPnv9+4ezHrRKR+1ntZXT6tpedtJSsbvXfG9VZiYjP+7jnczo4O7V7e3MeKVnbMzESHD65UCuDf/ZoJaDi1ym83hsf80UA/MaPb+8xjIC1frxVbkHNRrv/RUUe11eKcZrk+ykz7UxppI4vismbE3Ux/ecbdzJI//dC07wFDOWclU3bD1uraYUlGOd1Cv/9PYFFqlX17/8/nx01kshogmuPVTs93RZrXGdp8dMsUK921wCCaRl/hIb7wOjMP9MWIgfB8VOPwhOLvYSM7WkjHWoZrH69fCwXOwy17Ghj3SzjdF5cH5cLEa5YmaAOYzqQHRTzYtqP5iOJ/HFz+PZAeviFXzCsP+/gC/7+fRHlOvq5eX3H0YetN5LgUT55dHR1fG6Q+eN5oZi8rjm15Bq7avEtsOvKn65MkuySN7sVyuHN4qVAjjAL0Dm0Fz60wMTkxwoRlqnjYhjvvEq72NQEJ2NtUSlE2VVsc69shT4tX4XAy7sLlQLEjyi4E3hgNEua7ZK3a56TMXMw/7PxXdX3/72TRk8kUPpaolV2Gq8OGp/29uoPSrhpmJ4vwC3oE5TLmseWkL7RUyc9nzKuXcBwpQ8MyuSegWuoacf3GBBD6Fgcii55uZsmZ7MMd7Dxn7EuSxAy8pBsFyxGueQosED2e4QNBZRB0QF3YQPinXnzYNHXk8Fr/yvt6/AESMuRJqmpsRY4kPe/HE9ryFlP9lQDIwwR1cStKtJI+W6MYGnkJxGOtW4sdSB/T7fr5dmQQQJ5qRullgODqUQx5WT2bQKWbogwOkgdgXa4qeDcX1yc1yzcsXqMIBRjO0cipTzwbhUGgdgiNLfY6rb6sbY6D0mtmp9naZCCnjY6DnrRTdwmKv24sNaQhmJzAFyG+s0GhVg1DgBr8TcVfRAxcOWrd4cczmNMc+VPIm3hoRww5buh2Bk8RB8yxtDnaWaVehqq3Dz9vwc68FZViSj0pliMACWgXZ8LrUovDe75/D9Emwsu4NHr25VsCq4bjeY+nRx9GK00T/16vk1GsW8emtJNysQEpEKbZ3EdV9Y/ZZZrgOvlNVmVlYlM+jyCxdw+k0H5EenxRQxhYZiBn9HFaKZseJVzY+KWbIBcYztd+CSYLd5Zge+tJaKPToK56z1XcEgwjxftH87W7ecIgjtDcXWfSUzGQRCUVzBYHXsaVnBeYdNxaCSYuEUJ79jlgygfZ/GcACWWsWC0EEMPbeEOBfa+DKRfUcxlvTBBYLQlIAOtARbVIyxVsDFXcXApN61//A8Xe3i0SxvuNcV7O13C2y7dSgsDS6O8zMK30xYKsZw7Y7NoDeFfNtqQC7YX56142lMKQcjqKLHLO+cbimGXtlsWNiR5+3BdhWDG7HuV+yH765HAiQwQc1UY1lDs1IsV2s1+8/Y7ggioQaPw8JcrRVDaU3mlFAF7/lQP4zNbHdxf/8NJARQrO5x4U8Y+vd9Ngancm/C8oZy24o1T+5X7O13l711WJPHKl9L+nTN70CIgvDuo1WxDcUcI4Tpr706m2DJERW8QgeJIGIOQpyk1HDkPTZmoWI38I1YDmaN2VYVw3cQx3eXRkChs8vFr1lSMHl00FzZ1P2KOWAgqliA3AcRL5tluKUY3igXNVAMbEx6w8E0yBgM/nsOQ0Jp8mnF9lP8XE6AbDmOKTYP5F3JrN5fr5eZEmp2THJ/WzEsh+tly6wSRImrPrYxdC2pwfP24KDaJN7EMfmnnD8UdY+NwWf1adgYzqiwvcFm5bqM9P/zQZuFTLP64SXLKa11rlzPXaDTQRHaHEpR8KET7YyzrFBa3qh5OfQDlOoQxlsVziHyZ2NlRoUea2mvxNCKHJTkI8UmHnQRdTwUH8SWFUP2/XtCWbT0T+hZBjgP+rfjGJQP55J7N7tQY2j/ZhnHUDGcBYPSqwE7goQlDW4+obZwshlF6EbDKb4jozClOs4txWQFFINzNT9VxtfV9hXD+OPf45eZR0KatLAZZsuJmWUFG26A2xOfy+i9Ag/SEPawjjcpzigGbU4iQHqwLRfSg5CFCzM9hqPO90vgtx0tLL+eb9ur6Vs25qiqpdHIwJIhX+95fNs25jjFxqckg155CMlv3mqFamMtSdYqK4ZF7LfeR1rWYngA49QS8rDF1l4JzEVBc92HrpvFU6hZvHGIo8XNi6CCy3oHlQ/Qodax6I8np9ZtxUCkKjyGk5vY7D6GWLFlxeDBlfoYsjbiGc8n/3XnOGRu0p3sdNdrSTjLzQ24bGnm/PfBtIahWceuQcCKgjir+aNxaWdnMg5w+iLYYRinDvo471GpjMd6OEpFDQstNobCRPYG4wvRh6JWa3/Txmw1S0+1SINxcRyU8cUaUGy76yUQZjpQRN5KADgbI+R0P8FyPq7Xk25+8M4AF3izJfEUWp5B4rLdgZaBmTa17TCAkwszZWwMEqPv+ykeepjZhYuzPfj+VQQigjMGdYyCyQyiO/geFGgCQigvYwePnTgoBp4Ynxa0gOcTwf5OxGV5955Z80cmKfU9gTMMxsI4mpyIKjPwLsd247C5G+arb67a7zequUc2Ko3DErQxXzUah3Xz2CEONc8b1ZOvLzLFzCyajDqVWZjXWy5r1SogtdAy8oPjSWzjHGtSHKbmXay0MpsJb9gCSUqHlQoEUYhtdlIMOtDpaxENS/upd97avmKg2WRa8dflbMf/+g2aFeRIV7XCVmvZWEIJ19oksZX5NGWXwh+aZHMaCTgVt7xhPwj6x6VW/i34AHAGejgcDPtvJqGpMXAikoU3J1jS7neZf1LHOW4W4jgxTkPCsGHpuD8IzsctdnFYSp7Cm7lgHCoszc6DCk59BdPiXmxWD7E4sE0Vn0X+OytfWHbg9bvm5SXThGcxxkT+rsp+5uTmy5o2dgdO9vOn7Htt+JZ8nTgxP4hic7Us/7MRs3SLu2NcTJnjusDTWfdN5mG325rHXziMWndJ/9ys1q6/9A1+daev/GdF5T8PUTYp9veRvdvgfPHLlP86ij0UpNjnQop9LqTY57KcHxuQYp9Byff6F19a2P3rgDZWq4eP/PLNPzTKThT9mOkzgMIO5ylIMIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgHpr/BQhzNvexpDG3AAAAAElFTkSuQmCC">
+          </div>
+           
+          
+         
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Features
+          </h6>
+          <p>
+            Deals & Offers
+          </p>
+          <p>
+           Customer Reviews
+          </p>
+          <p>
+           Tour Vouchers
+          </p>
+          <p>
+            Cancellation Policy
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            expedia@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://expedia.com/">Expedia.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    
+  
+
+      
+        
+      
+    
+    
+    
+</body>
+</html>
